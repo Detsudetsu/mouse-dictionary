@@ -154,6 +154,7 @@ const getInitialPosition = (type, dialogWidth) => {
   const position = {};
   switch (type) {
     case "right":
+      break;  // TODO: add case "bottom"
       position.left = document.documentElement.clientWidth - dialogWidth - EDGE_SPACE;
       break;
     case "left":
