@@ -40,6 +40,10 @@ export default {
       replace: "<br/>",
     },
     {
+      search: "э'",
+      replace: "ə́",
+    },
+    {
       search: "э",
       replace: "ə",
     },
