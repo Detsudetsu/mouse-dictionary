@@ -39,6 +39,54 @@ export default {
       search: "\\n|\\\\n",
       replace: "<br/>",
     },
+    {
+      search: "э",
+      replace: "ə",
+    },
+    {
+      search: "∫",
+      replace: "ʃ",
+    },
+    {
+      search: "Λ'",
+      replace: "ʌ́",
+    },
+    {
+      search: "Λ",
+      replace: "ʌ",
+    },
+    {
+      search: "`",
+      replace: "",
+    },
+    {
+      search: "ae'",
+      replace: "ǽ",
+    },
+    {
+      search: "a'",
+      replace: "á",
+    },
+    {
+      search: "e'",
+      replace: "é",
+    },
+    {
+      search: "i'",
+      replace: "í",
+    },
+    {
+      search: "o'",
+      replace: "ó",
+    },
+    {
+      search: "u'",
+      replace: "ú",
+    },
+    {
+      search: "ｏ",
+      replace: "ɔ",
+    }
   ],
 
   normalDialogStyles: `{
