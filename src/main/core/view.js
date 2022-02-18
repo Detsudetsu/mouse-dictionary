@@ -9,9 +9,11 @@ import template from "../lib/template";
 
 const STYLES_SCROLL = "border-radius: 5px 0px 0px 5px;";
 const STYLES_NORMAL = "border-radius: 5px 5px 5px 5px;";
+const STYLES_BOTTOM = "border-radius: 5px 5px 0px 0px;";
 
 const createDialogElement = (settings) => {
-  const systemStyles = settings.scroll === "scroll" ? STYLES_SCROLL : STYLES_NORMAL;
+  // const systemStyles = settings.scroll === "scroll" ? STYLES_SCROLL : STYLES_NORMAL;
+  const systemStyles = STYLES_BOTTOM;
 
   const html = template.render(settings.dialogTemplate, {
     systemStyles,
