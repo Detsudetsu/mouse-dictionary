@@ -129,6 +129,7 @@ export default {
       <span style="{{cssReset}};font-size:{{headFontSize}};color:{{headFontColor}};font-weight:bold;">
         <a href="https://www.google.com/search?q=define+{{head}}" target="_blank" style="text-decoration:none;color:{{headFontColor}}">{{head}}</a>
       </span>
+      <span style="cursor:pointer;visibility:hidden;" data-md-pronunciation="{{head}}" data-md-hovervisible>🔊</span>
       <br/>
       <span style="{{cssReset}};font-size:{{descFontSize}};color:{{descFontColor}};">
         {{{desc}}}

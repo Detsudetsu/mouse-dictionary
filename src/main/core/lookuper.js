@@ -109,6 +109,7 @@ export default class Lookuper {
     console.time(`lookup-${counter}`);
     const { html, hit } = await this.runAll(textList, withCapitalized, includeOriginalText, enableShortWord);
     const content = dom.create(html);
+
     this.lastText = cacheKey;
     console.timeEnd(`lookup-${counter}`);
 
