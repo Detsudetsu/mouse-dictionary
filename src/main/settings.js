@@ -155,7 +155,7 @@ export default {
       <a href="https://www.thesaurus.com/browse/{{head}}" target="_blank" style="text-decoration:none;">🍩</a>
       <a href="https://skell.sketchengine.eu/#result?lang=en&f=concordance&query={{head}}" target="_blank" style="text-decoration:none;">🍮</a>
       <a href="https://www.etymonline.com/word/{{head}}" target="_blank" style="text-decoration:none;">🌊</a>
-      <a href="https://www.google.com/search?q={{head}}&hl=en&tbm=isch" style="text-decoration:none;">📷</a>
+      <a href="https://www.google.com/search?q={{head}}&hl=en&tbm=isch" target="_blank" style="text-decoration:none;">📷</a>
       <span style="cursor:pointer;" data-md-pronunciation="{{head}}">🔊</span>
     </span>
     <hr style="border:0;border-top:1px solid #E0E0E0;margin:10px 0;height:1px;width:100%;" />
