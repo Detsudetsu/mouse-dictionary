@@ -47,6 +47,46 @@ const create = (settings) => {
   header.style.fontWeight = "bold";
   header.textContent = "Tap Dictionary";
   newDiv.appendChild(header);
+  const styleSheet = document.styleSheets[0];
+  styleSheet.insertRule(`
+  @keyframes standby {
+    from {
+      height: 50vh
+    }
+  
+    to {
+      height: 15vh;
+    }
+  }`, styleSheet.cssRules.length);
+  styleSheet.insertRule(`
+  @keyframes slide {
+    from {
+      height: 15vh;
+    }
+  
+    to {
+      height: 50vh;
+    }
+  }`, styleSheet.cssRules.length);
+  styleSheet.insertRule(`
+  .standby {
+    animation: .2s ease 0s forwards standby !important;
+  }`, styleSheet.cssRules.length);
+  styleSheet.insertRule(`
+  .slide {
+    animation: .2s ease 0s forwards slide !important;
+  }`, styleSheet.cssRules.length);
+  newDiv.addEventListener("touchstart", e => {
+    if (dialog.classList.contains("slide")) {
+      dialog.classList.replace("slide", "standby");
+    } else {
+      dialog.classList.replace("standby", "slide");
+    }
+    // prevent an element beneath the handle bar from being tapped
+    // not to tap an unintentional link or word
+    e.preventDefault();
+  });
+  dialog.classList.add("slide")
   dialog.appendChild(newDiv);
   
 
