@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "Mouse Dictionary",
+  "name": "Tap Dictionary",
   "version": "",
   "description": "__MSG_appDesc__",
   "default_locale": "en",
-  "author": "wtetsu",
+  "author": "detsu",
   "options_ui": {
     "page": "options/options.html",
     "open_in_tab": true
@@ -15,7 +15,7 @@
   },
   "browser_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "Mouse Dictionary"
+    "default_title": "Tap Dictionary"
   },
   "commands": {
     "_execute_browser_action": {
