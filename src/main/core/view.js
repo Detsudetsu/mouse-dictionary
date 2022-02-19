@@ -31,8 +31,6 @@ const create = (settings) => {
   const dialog = createDialogElement(settings);
 
   const newDiv = document.createElement("div");
-  newDiv.style.top = "5px";
-  // newDiv.style.backgroundColor = "aliceblue";
   const handleBar = document.createElement("div");
   handleBar.style.backgroundColor = "whitesmoke";
   handleBar.style.padding = "3px";
