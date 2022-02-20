@@ -107,13 +107,13 @@ export default {
   "zIndex": -1
 }`,
 
-  contentWrapperTemplate: `<div style="margin:0;padding:0;border:0;vertical-align:baseline;text-align:left;overflow-y:scroll;height:calc(100% - 60px);">
+  contentWrapperTemplate: `<div style="margin:0;padding:10px;border:0;vertical-align:baseline;text-align:left;overflow-y:scroll;height:calc(100% - 60px);">
 </div>`,
 
   dialogTemplate: `<div class="notranslate"
      style="all:initial;
             {{systemStyles}}
-            width: 95%;
+            width: 100%;
             height: {{height}}px;
             position: fixed;
             overflow-x: hidden;
@@ -122,7 +122,7 @@ export default {
             margin: auto;
             background-color: {{backgroundColor}};
             z-index: 2147483646;
-            padding: 0px 10px;
+            padding: 0px;
             box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);">
 </div>`,
 
