@@ -146,15 +146,15 @@ export default {
       </span>
     {{/isShort}}
     <br/>
-    <span style="display: flex; justify-content: space-between; margin-top: 10px">
-      <a href="https://dictionary.cambridge.org/dictionary/english/{{head}}" target="_blank" style="text-decoration:none;color:{{headFontColor}}">🧡</a>
-      <a href="https://www.lexico.com/definition/{{head}}" target="_blank" style="text-decoration:none;color:{{headFontColor}}">💚</a>
-      <a href="http://www.freecollocation.com/search?word={{head}}" target="_blank" style="text-decoration:none;">🍪</a>
-      <a href="https://www.thesaurus.com/browse/{{head}}" target="_blank" style="text-decoration:none;">🍩</a>
-      <a href="https://skell.sketchengine.eu/#result?lang=en&f=concordance&query={{head}}" target="_blank" style="text-decoration:none;">🍮</a>
-      <a href="https://www.etymonline.com/word/{{head}}" target="_blank" style="text-decoration:none;">🌊</a>
-      <a href="https://www.google.com/search?q={{head}}&hl=en&tbm=isch" target="_blank" style="text-decoration:none;">📷</a>
-      <span style="cursor:pointer;" data-md-pronunciation="{{head}}">🔊</span>
+    <span style="display: flex; justify-content: space-between; margin-top: 10px" class="td-nolookup">
+      <a href="https://dictionary.cambridge.org/dictionary/english/{{head}}" target="_blank" style="text-decoration:none;color:{{headFontColor}}" class="td-nolookup">🧡</a>
+      <a href="https://www.lexico.com/definition/{{head}}" target="_blank" style="text-decoration:none;color:{{headFontColor}}" class="td-nolookup">💚</a>
+      <a href="http://www.freecollocation.com/search?word={{head}}" target="_blank" style="text-decoration:none;" class="td-nolookup">🍪</a>
+      <a href="https://www.thesaurus.com/browse/{{head}}" target="_blank" style="text-decoration:none;" class="td-nolookup">🍩</a>
+      <a href="https://skell.sketchengine.eu/#result?lang=en&f=concordance&query={{head}}" target="_blank" style="text-decoration:none;" class="td-nolookup">🍮</a>
+      <a href="https://www.etymonline.com/word/{{head}}" target="_blank" style="text-decoration:none;" class="td-nolookup">🌊</a>
+      <a href="https://www.google.com/search?q={{head}}&hl=en&tbm=isch" target="_blank" style="text-decoration:none;" class="td-nolookup">📷</a>
+      <span style="cursor:pointer;" data-md-pronunciation="{{head}}" class="td-nolookup">🔊</span>
     </span>
     <hr style="border:0;border-top:1px solid #E0E0E0;margin:10px 0;height:1px;width:100%;" />
   {{/words}}

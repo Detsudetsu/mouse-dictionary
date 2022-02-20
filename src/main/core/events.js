@@ -56,6 +56,7 @@ const attach = async (settings, dialog, doUpdateContent) => {
   const onMouseMoveSecondOrLater = async (e) => {
     draggable.onMouseMove(e);
     if (enableDefault) {
+      if (e.target.classList.contains("td-nolookup")) return;
       const textList = traverse(e.target, e.clientX, e.clientY);
       const updated = await lookuper.lookupAll(textList);
       if (updated) {
