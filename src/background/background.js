@@ -19,6 +19,9 @@ if (BROWSER === "CHROME") {
     chrome.tabs.executeScript({
       file: "./main.js",
     });
+    chrome.tabs.insertCSS({
+      file: "./main.css",
+    });
   });
 }
 

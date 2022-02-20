@@ -49,35 +49,6 @@ const create = (settings) => {
   header.textContent = "Tap Dictionary";
   header.classList.add("td-nolookup");
   newDiv.appendChild(header);
-  const styleSheet = document.styleSheets[0];
-  styleSheet.insertRule(`
-  @keyframes standby {
-    from {
-      height: 50vh
-    }
-  
-    to {
-      height: 15vh;
-    }
-  }`, styleSheet.cssRules.length);
-  styleSheet.insertRule(`
-  @keyframes slide {
-    from {
-      height: 15vh;
-    }
-  
-    to {
-      height: 50vh;
-    }
-  }`, styleSheet.cssRules.length);
-  styleSheet.insertRule(`
-  .standby {
-    animation: .2s ease 0s forwards standby !important;
-  }`, styleSheet.cssRules.length);
-  styleSheet.insertRule(`
-  .slide {
-    animation: .2s ease 0s forwards slide !important;
-  }`, styleSheet.cssRules.length);
   let initialY;
   newDiv.addEventListener("touchstart", e => {
     if (e.touches.length > 1) return;
