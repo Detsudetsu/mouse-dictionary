@@ -123,7 +123,6 @@ export default {
             background-color: {{backgroundColor}};
             z-index: 2147483646;
             padding: 0px 10px;
-            border: 0px solid #A0A0A0;
             box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);">
 </div>`,
 
@@ -133,7 +132,6 @@ export default {
       <span style="{{cssReset}};font-size:{{headFontSize}};color:{{headFontColor}};font-weight:bold;">
         <a href="https://www.google.com/search?q=define+{{head}}" target="_blank" style="text-decoration:none;color:{{headFontColor}}">{{head}}</a>
       </span>
-      <span style="cursor:pointer;visibility:hidden;" data-md-pronunciation="{{head}}" data-md-hovervisible>🔊</span>
       <br/>
       <span style="{{cssReset}};font-size:{{descFontSize}};color:{{descFontColor}};">
         {{{desc}}}
