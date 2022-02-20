@@ -11,6 +11,9 @@ chrome.browserAction.onClicked.addListener(() => {
   chrome.tabs.executeScript({
     file: "./main.js",
   });
+  chrome.tabs.insertCSS({
+    file: "./main.css",
+  })
 });
 
 // cross-extension messaging

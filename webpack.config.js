@@ -7,6 +7,7 @@ const GenerateDictionaryPlugin = require("./build_tools/webpack_plugins/Generate
 const GenerateManifestPlugin = require("./build_tools/webpack_plugins/GenerateManifestPlugin");
 const jaRule = require("deinja/src/data");
 const ExtReloader = require('webpack-ext-reloader');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const mode = process.env.NODE_ENV || "development";
 const isProd = mode === "production";
@@ -41,6 +42,10 @@ module.exports = (env) => {
             },
           },
           exclude: /node_modules/,
+        },
+        {
+          test: /\.css$/i,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
       ],
     },
@@ -106,6 +111,9 @@ module.exports = (env) => {
       }),
       new ExtReloader({
         manifest: path.resolve(__dirname, "platform", "manifest-chrome.json")
+      }),
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
       }),
     ],
   };

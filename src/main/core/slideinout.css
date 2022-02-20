@@ -1,0 +1,27 @@
+@keyframes standby {
+  from {
+    height: 50vh
+  }
+
+  to {
+    height: 15vh;
+  }
+}
+
+@keyframes slide {
+  from {
+    height: 15vh;
+  }
+
+  to {
+    height: 50vh;
+  }
+}
+
+.standby {
+  animation: .2s ease 0s forwards standby !important;
+}
+
+.slide {
+  animation: .2s ease 0s forwards slide !important;
+}
