@@ -32,11 +32,13 @@ const create = (settings) => {
 
   const newDiv = document.createElement("div");
   newDiv.style.padding = "10px 0px";
+  newDiv.classList.add("td-nolookup");
   const handleBar = document.createElement("div");
   handleBar.style.backgroundColor = "whitesmoke";
   handleBar.style.padding = "3px";
   handleBar.style.margin = "0px 45%";
   handleBar.style.borderRadius = "5px";
+  handleBar.classList.add("td-nolookup");
   newDiv.appendChild(handleBar);
   const header = document.createElement("div");
   header.style.textAlign = "center";
@@ -45,6 +47,7 @@ const create = (settings) => {
   header.style.fontWeight = "bold";
   header.style.marginTop = "10px";
   header.textContent = "Tap Dictionary";
+  header.classList.add("td-nolookup");
   newDiv.appendChild(header);
   const styleSheet = document.styleSheets[0];
   styleSheet.insertRule(`
