@@ -78,15 +78,23 @@ const create = (settings) => {
   .slide {
     animation: .2s ease 0s forwards slide !important;
   }`, styleSheet.cssRules.length);
+  let initialY;
   newDiv.addEventListener("touchstart", e => {
+    if (e.touches.length > 1) return;
+    initialY = e.touches[0].clientY;
+    if (e.cancelable) e.preventDefault();
+  })
+  const SWIPE_THRESHOLD = 3;
+  newDiv.addEventListener("touchend", e => {
+    if (e.changedTouches.length > 1) return;
+    const deltaY = e.changedTouches[0].clientY - initialY;
     if (dialog.classList.contains("slide")) {
+      if (deltaY < SWIPE_THRESHOLD) return;
       dialog.classList.replace("slide", "standby");
     } else {
+      if (deltaY > -SWIPE_THRESHOLD) return;
       dialog.classList.replace("standby", "slide");
     }
-    // prevent an element beneath the handle bar from being tapped
-    // not to tap an unintentional link or word
-    e.preventDefault();
   });
   dialog.classList.add("slide")
   dialog.appendChild(newDiv);
