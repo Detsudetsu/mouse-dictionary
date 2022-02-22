@@ -55,7 +55,7 @@ export default {
   "zIndex": -1
 }`,
 
-  contentWrapperTemplate: `<div style="margin:0;padding:10px;border:0;vertical-align:baseline;text-align:left;overflow-y:scroll;height:calc(100% - 60px);">
+  contentWrapperTemplate: `<div style="margin:0;padding:10px;border:0;vertical-align:baseline;text-align:left;overflow-y:scroll;height:calc(100% - 60px);" class="td-nolookup">
 </div>`,
 
   dialogTemplate: `<div class="notranslate"
@@ -74,7 +74,7 @@ export default {
             box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);">
 </div>`,
 
-  contentTemplate: `<div style="{{cssReset}};font-family:'hiragino kaku gothic pro', meiryo, sans-serif;">
+  contentTemplate: `<div style="{{cssReset}};font-family:'hiragino kaku gothic pro', meiryo, sans-serif;" class="td-nolookup">
   {{#words}}
     {{^isShort}}
       <span style="{{cssReset}};font-size:{{headFontSize}};color:{{headFontColor}};font-weight:bold;">
