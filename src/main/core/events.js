@@ -53,10 +53,18 @@ const attach = async (settings, dialog, doUpdateContent) => {
     onMouseMove(e);
   };
 
+  let lastClientY;
+  document.body.addEventListener("touchstart", (e) => lastClientY = e.touches[0].clientY);
+
+  const SCROLL_THRESHOLD = 1;
   const onMouseMoveSecondOrLater = async (e) => {
+    e = e.touches ? e.touches[0] : e;
     draggable.onMouseMove(e);
     if (enableDefault) {
       if (e.target.classList.contains("td-nolookup")) return;
+      const savedLastClientY = lastClientY;
+      lastClientY = e.clientY;
+      if (Math.abs(e.clientY - savedLastClientY) > SCROLL_THRESHOLD) return;
       const textList = traverse(e.target, e.clientX, e.clientY);
       const updated = await lookuper.lookupAll(textList);
       if (updated) {
@@ -66,6 +74,7 @@ const attach = async (settings, dialog, doUpdateContent) => {
   };
   let onMouseMove = onMouseMoveFirst;
   document.body.addEventListener("mousemove", (e) => onMouseMove(e));
+  document.body.addEventListener("touchmove", (e) => onMouseMove(e));
 
   document.body.addEventListener("keydown", (e) => {
     if (e.key === "Shift") {
