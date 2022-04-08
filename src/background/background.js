@@ -8,8 +8,14 @@ import ExpiringQueue from "./queue";
 import uniqueId from "./unique";
 
 chrome.browserAction.onClicked.addListener(() => {
-  chrome.tabs.executeScript({
-    file: "./main.js",
+  chrome.tabs.query({}, allTabs => {
+    const activeTabID = allTabs.filter(t => t.active)[0].id;
+    chrome.tabs.executeScript(activeTabID, {
+      file: "./main.js",
+    });
+    chrome.tabs.insertCSS(activeTabID, {
+      file: "./main.css",
+    });
   });
 });
 
