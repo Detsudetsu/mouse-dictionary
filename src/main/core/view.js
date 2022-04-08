@@ -46,7 +46,7 @@ const create = (settings) => {
   header.style.fontVariantCaps = "all-petite-caps";
   header.style.fontWeight = "bold";
   header.style.marginTop = "10px";
-  header.textContent = "Tap Dictionary";
+  header.textContent = "Touch Dictionary";
   header.classList.add("td-nolookup");
   newDiv.appendChild(header);
   let initialY;
