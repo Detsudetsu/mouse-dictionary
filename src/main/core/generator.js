@@ -32,20 +32,20 @@ export default class Generator {
   }
 
   generate(words, descriptions, enableShortWordLength = true) {
-    const html = this.createContentHtml(words, descriptions, enableShortWordLength);
+    const html = this.#createContentHtml(words, descriptions, enableShortWordLength);
     const hitCount = Object.keys(descriptions).length;
     return { html, hitCount };
   }
 
-  createContentHtml(words, descriptions, enableShortWordLength) {
+  #createContentHtml(words, descriptions, enableShortWordLength) {
     const parameters = {
       ...this.baseParameters,
-      words: this.createWordsParameter(words, descriptions, enableShortWordLength),
+      words: this.#createWordsParameter(words, descriptions, enableShortWordLength),
     };
     return template.render(this.contentTemplate, parameters);
   }
 
-  createDescriptionHtml(sourceText) {
+  #createDescriptionHtml(sourceText) {
     let result = sourceText;
     for (let i = 0; i < this.compiledReplaceRules.length; i++) {
       const rule = this.compiledReplaceRules[i];
@@ -54,7 +54,7 @@ export default class Generator {
     return result;
   }
 
-  createWordsParameter(words, descriptions, enableShortWordLength) {
+  #createWordsParameter(words, descriptions, enableShortWordLength) {
     const data = [];
     const shortWordLength = enableShortWordLength ? this.shortWordLength : 0;
     for (let i = 0; i < words.length; i++) {
@@ -63,10 +63,13 @@ export default class Generator {
       if (typeof desc !== "string") {
         continue;
       }
+      const isShort = word.length <= shortWordLength;
+      const isShortWord = word.length <= this.shortWordLength;
       data.push({
         head: escapeHtml(word),
-        desc: this.createDescriptionHtml(desc),
-        isShort: word.length <= shortWordLength,
+        desc: this.#createDescriptionHtml(desc),
+        isShort,
+        isShortWord,
         shortDesc: desc.substring(0, this.cutShortWordDescription),
         isFirst: false,
         isLast: false,
@@ -74,6 +77,7 @@ export default class Generator {
     }
     if (data.length >= 1) {
       data[0].isFirst = true;
+      data[0].isShort = false;
       data[data.length - 1].isLast = true;
     }
     return data;

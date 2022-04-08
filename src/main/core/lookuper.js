@@ -36,7 +36,7 @@ export default class Lookuper {
     }
   }
 
-  canUpdate() {
+  #canUpdate() {
     if (this.suspended) {
       return false;
     }
@@ -54,37 +54,39 @@ export default class Lookuper {
   }
 
   async lookupAll(textList) {
-    if (!this.canUpdate()) {
-      return;
+    if (!this.#canUpdate()) {
+      return false;
     }
-    await this.updateAll(textList, this.lookupWithCapitalized, false, true, 0);
+    return await this.#updateAll(textList, this.lookupWithCapitalized, false, true, 0);
   }
 
   async aimedLookup(text) {
     if (!text) {
       this.aimed = false;
-      return;
+      return false;
     }
     this.aimed = true;
-    await this.update(text, true, true, false, 1);
+    return await this.update(text, true, true, false, 1);
   }
 
   async update(text, withCapitalized, includeOriginalText, enableShortWord, threshold = 0) {
     if (!text) {
-      return;
+      return false;
     }
-    return this.updateAll([text], withCapitalized, includeOriginalText, enableShortWord, threshold);
+    return await this.#updateAll([text], withCapitalized, includeOriginalText, enableShortWord, threshold);
   }
 
-  async updateAll(textList, withCapitalized, includeOriginalText, enableShortWord, threshold = 0) {
-    const { content, hit } = await this.createContent(textList, withCapitalized, includeOriginalText, enableShortWord);
+  async #updateAll(textList, withCapitalized, includeOriginalText, enableShortWord, threshold = 0) {
+    const { content, hit } = await this.#createContent(textList, withCapitalized, includeOriginalText, enableShortWord);
 
     if (hit >= threshold) {
       this.doUpdateContent(content, hit);
+      return true;
     }
+    return false;
   }
 
-  async createContent(sourceTextList, withCapitalized, includeOriginalText, enableShortWord) {
+  async #createContent(sourceTextList, withCapitalized, includeOriginalText, enableShortWord) {
     const textList = [];
     for (let i = 0; i < sourceTextList.length; i++) {
       const text = sourceTextList[i].substring(0, this.textLengthLimit);
