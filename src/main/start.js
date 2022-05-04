@@ -5,6 +5,7 @@
  */
 
 import launch from "./core/launch";
+import "./core/slideinout.css"
 
 const main = async () => {
   console.time("launch");
