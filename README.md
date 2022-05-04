@@ -2,11 +2,14 @@
 [![Code Climate](https://codeclimate.com/github/wtetsu/mouse-dictionary/badges/gpa.svg)](https://codeclimate.com/github/wtetsu/mouse-dictionary)
 [![codecov](https://codecov.io/gh/wtetsu/mouse-dictionary/branch/master/graph/badge.svg)](https://codecov.io/gh/wtetsu/mouse-dictionary)
 
-# Mouse Dictionary: Super Fast Dictionary
+# Touch Dictionary: Super Fast Dictionary for Touch Devices
 
-<img src="https://github.com/wtetsu/mouse-dictionary/blob/images/logo.png" title="Mouse Dictionary" width="400" height="229">
+![logo](https://user-images.githubusercontent.com/36166146/166674433-7321bbee-1716-4954-be37-7195293a86ab.png)
 
-[Mouse Dictionary](https://mouse-dictionary.netlify.app/en/) is a super fast dictionary for Chrome and Firefox.
+Touch Dictionary is a fork of [Mouse Dictionary](https://mouse-dictionary.netlify.app/en/) ([original repo](https://github.com/wtetsu/mouse-dictionary)).
+
+The main focus of this extension is offering touch-friendly UI for devices like smartphones or tablets.
+
 
 Features:
 
@@ -36,6 +39,8 @@ Available for various documents:
 See also [Getting started](https://github.com/wtetsu/mouse-dictionary/wiki/Getting-started)
 
 ## Screenshots
+
+![touch-dictionary-demo-mini](https://user-images.githubusercontent.com/36166146/166674107-6aa795a0-0a33-4e54-96ce-58f450845148.gif)
 
 ### English-Japanese
 
@@ -120,7 +125,7 @@ Parameters:
 
 ## License
 
-Mouse Dictionary is published under the MIT license.
+Touch Dictionary is published under the MIT license.
 
 ## Third-party data
 
@@ -142,7 +147,3 @@ This project includes some third-party data:
 ### Great JavaScript libraries
 
 - See [package.json](./package.json) and [license.json](https://github.com/wtetsu/mouse-dictionary/actions/workflows/license.yml)
-
-## See also
-
-[Chrome 拡張の高速な英語辞書ツールをつくりました](https://qiita.com/wtetsu/items/c43232c6c44918e977c9)(a Japanese tutorial)
