@@ -20,6 +20,12 @@
   "commands": {
     "_execute_browser_action": {
       "description": "Activate the extension"
+    },
+    "scroll_down": {
+      "description": "__MSG_scrollDown__"
+    },
+    "scroll_up": {
+      "description": "__MSG_scrollUp__"
     }
   },
   "icons": {
