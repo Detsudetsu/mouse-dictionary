@@ -15,7 +15,7 @@
   },
   "action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "Tap Dictionary"
+    "default_title": "Touch Dictionary"
   },
   "commands": {
     "_execute_action": {
