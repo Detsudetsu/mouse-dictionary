@@ -1,7 +1,3 @@
-[![Test](https://github.com/wtetsu/mouse-dictionary/workflows/Test/badge.svg)](https://github.com/wtetsu/mouse-dictionary/actions?query=workflow%3ATest)
-[![Code Climate](https://codeclimate.com/github/wtetsu/mouse-dictionary/badges/gpa.svg)](https://codeclimate.com/github/wtetsu/mouse-dictionary)
-[![codecov](https://codecov.io/gh/wtetsu/mouse-dictionary/branch/master/graph/badge.svg)](https://codecov.io/gh/wtetsu/mouse-dictionary)
-
 # Touch Dictionary: Super Fast Dictionary for Touch Devices
 
 ![logo](https://user-images.githubusercontent.com/36166146/166674433-7321bbee-1716-4954-be37-7195293a86ab.png)
@@ -10,52 +6,25 @@ Touch Dictionary is a fork of [Mouse Dictionary](https://mouse-dictionary.netlif
 
 The main focus of this extension is offering touch-friendly UI for devices like smartphones or tablets.
 
-
 Features:
 
-- Super fast (react in 1/60 second)
-- Awesome phrases detection
-- Capable of importing your own text data
-- **Available on PDF documents!**
-- Look up connected words nicely (e.g. camelCase -> camel case)
-- Customizable view
-
-Available for various documents:
-
-- HTML documents
-- PDF documents
-- YouTube captions
-- Notion
-- Evernote (Use with [Mouse Dictionary iframe support](https://chrome.google.com/webstore/detail/mouse-dictionary-iframe-s/nigglogmamjbcnljijokibobpcfgmdfn))
-- Local files (HTML, text, PDF)
-- ...
-
-## Install
-
-- [For Chrome](https://chrome.google.com/webstore/detail/mouse-dictionary/dnclbikcihnpjohihfcmmldgkjnebgnj)
-- [For Firefox](https://addons.mozilla.org/ja/firefox/addon/mousedictionary/)
-- For Safari (See [#53](https://github.com/wtetsu/mouse-dictionary/pull/53))
-
-See also [Getting started](https://github.com/wtetsu/mouse-dictionary/wiki/Getting-started)
+- Slidable bottom sheet
+- Hold down and move your finger along text to view definitions of the each word
 
 ## Screenshots
 
 ![touch-dictionary-demo-mini](https://user-images.githubusercontent.com/36166146/166674107-6aa795a0-0a33-4e54-96ce-58f450845148.gif)
 
-### English-Japanese
+## Install
 
-![ss02.gif](https://github.com/wtetsu/mouse-dictionary/blob/images/ss02.gif)
+This project is still experimental.
+Users are expected to know the basic setup of Mouse Dictionary (see [Getting started of Mouse Dictionary](https://github.com/wtetsu/mouse-dictionary/wiki/Getting-started))
 
-### Japanese-English
+### Android
 
-![ss03.gif](https://github.com/wtetsu/mouse-dictionary/blob/images/ss03.png)
-
-### German
-
-Want to use for the German language? Take a look these great articles!
-
-- [MOUSE DICTIONARY MIT WADOKU-WÖRTERBUCH](https://informationjapanforschung.blogspot.com/2019/06/mouse-dictionary-mit-wadoku-worterbuch.html)
-- [MOUSE DICTIONARY 2](https://informationjapanforschung.blogspot.com/2019/06/mouse-dictionary-2.html)
+1. Install kiwi browser
+2. Download a zip file from releases page
+3. Install the zip file into kiwi browser
 
 ## How to develop
 
@@ -69,59 +38,12 @@ npm install
 
 ### Build
 
-For Chrome:
-
 ```sh
-npm run build-chrome   # Debug build
-npm run release-chrome # Release build
-```
-
-For Firefox:
-
-```sh
-npm run build-firefox   # Debug build
-npm run release-firefox # Release build
-```
-
-For Safari:
-
-```sh
-npm run build-safari   # Debug build
-npm run release-safari # Release build
+npm run chrome-watch	# Build with hot reloading
+npm run chrome-package	# Build zip file
 ```
 
 see [package.json](./package.json) for other commands.
-
-## Contribution
-
-For the moment, Mouse Dictionary project doesn't have any strict rule about contribution. Feel free to create any issues and pull requests.
-
-Some guides:
-
-- Editor: the main developer uses VSCode
-- Before you commit: try running `npm run test` and `npm run lint`
-
-## Cross-extension messaging
-
-Mouse Dictionary supports receiving [cross-extension messages](https://developer.chrome.com/extensions/messaging). [Mouse Dictionary iframe support](https://github.com/wtetsu/mouse-dictionary-iframe) is a good example that implements message sending to this extension.
-
-Here is a code example for sending a message to Mouse Dictionary. You can make Mouse Dictionary look up words/expressions from other extensions.
-
-```js
-const MD_EXTENSION_ID = "dnclbikcihnpjohihfcmmldgkjnebgnj";
-
-chrome.runtime.sendMessage(MD_EXTENSION_ID, {
-  type: "text",
-  text: "rained cats and dogs",
-});
-```
-
-Parameters:
-
-| name | type   | value                    |
-| ---- | ------ | ------------------------ |
-| type | string | must be "text"           |
-| text | string | text you want to look up |
 
 ## License
 
