@@ -42,7 +42,7 @@ if (require.main === module) {
   const postfix = process.argv[2];
   const version = process.env.npm_package_version;
   const sourcePath = `dist-${postfix}`;
-  const outZipName = `mouse-dictionary-${postfix}-${version}.zip`;
+  const outZipName = `touch-dictionary-${postfix}-${version}.zip`;
   const outZipPath = path.join("./", outZipName);
 
   main(sourcePath, outZipPath);
