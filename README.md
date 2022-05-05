@@ -23,7 +23,7 @@ Users are expected to know the basic setup of Mouse Dictionary (see [Getting sta
 ### Android
 
 1. Install kiwi browser
-2. Download a zip file from releases page
+2. Download `touch-dictionary-chrome-<version>.zip` from [releases page](https://github.com/Detsudetsu/touch-dictionary/releases)
 3. Install the zip file into kiwi browser
 
 ## How to develop
@@ -42,8 +42,6 @@ npm install
 npm run chrome-watch	# Build with hot reloading
 npm run chrome-package	# Build zip file
 ```
-
-see [package.json](./package.json) for other commands.
 
 ## License
 
