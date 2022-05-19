@@ -7,17 +7,26 @@
 import ExpiringQueue from "./queue";
 import uniqueId from "./unique";
 
-chrome.browserAction.onClicked.addListener(() => {
-  chrome.tabs.query({}, allTabs => {
-    const activeTabID = allTabs.filter(t => t.active)[0].id;
-    chrome.tabs.executeScript(activeTabID, {
-      file: "./main.js",
-    });
-    chrome.tabs.insertCSS(activeTabID, {
-      file: "./main.css",
+if (BROWSER === "CHROME") {
+  chrome.action.onClicked.addListener((tab) => {
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      files: ["main.js"],
     });
   });
-});
+} else {
+  chrome.browserAction.onClicked.addListener(() => {
+    chrome.tabs.query({}, allTabs => {
+      const activeTabID = allTabs.filter(t => t.active)[0].id;
+      chrome.tabs.executeScript(activeTabID, {
+        file: "./main.js",
+      });
+      chrome.tabs.insertCSS(activeTabID, {
+        file: "./main.css",
+      });
+    });
+  });
+}
 
 // cross-extension messaging
 chrome.runtime.onMessageExternal.addListener((message) => {
