@@ -13,6 +13,10 @@ if (BROWSER === "CHROME") {
       target: { tabId: tab.id },
       files: ["main.js"],
     });
+    chrome.scripting.insertCSS({
+      target: { tabId: tab.id },
+      files: ["main.css"],
+    })
   });
 } else {
   chrome.browserAction.onClicked.addListener(() => {
