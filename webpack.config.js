@@ -6,7 +6,6 @@ const UniteJsonPlugin = require("./build_tools/webpack_plugins/UniteJsonPlugin")
 const GenerateDictionaryPlugin = require("./build_tools/webpack_plugins/GenerateDictionaryPlugin");
 const GenerateManifestPlugin = require("./build_tools/webpack_plugins/GenerateManifestPlugin");
 const jaRule = require("deinja/src/data");
-const ExtReloader = require('webpack-ext-reloader');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const mode = process.env.NODE_ENV || "development";
@@ -26,7 +25,6 @@ module.exports = (env) => {
       background: "./src/background/background.js",
     },
     output: {
-      filename: '[name].js',
       path: __dirname + `/dist-${env.platform}`,
     },
     module: {
@@ -108,9 +106,6 @@ module.exports = (env) => {
         to: "manifest.json",
         overwrite: { version },
         debug: !isProd,
-      }),
-      new ExtReloader({
-        manifest: path.resolve(__dirname, "platform", "manifest-chrome.json")
       }),
       new MiniCssExtractPlugin({
         filename: "[name].css",
