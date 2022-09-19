@@ -96,7 +96,6 @@ export default {
     <br/>
     <span style="display: flex; justify-content: space-between; margin-top: 10px" class="td-nolookup">
       <a href="https://dictionary.cambridge.org/dictionary/english/{{head}}" target="_blank" style="text-decoration:none;color:{{headFontColor}}" class="td-nolookup">🧡</a>
-      <a href="https://www.lexico.com/definition/{{head}}" target="_blank" style="text-decoration:none;color:{{headFontColor}}" class="td-nolookup">💚</a>
       <a href="https://www.oxfordlearnersdictionaries.com/definition/english/{{head}}" target="_blank" style="text-decoration:none;color:{{headFontColor}}" class="td-nolookup">💙</a>
       <a href="http://www.freecollocation.com/search?word={{head}}" target="_blank" style="text-decoration:none;" class="td-nolookup">🍪</a>
       <a href="https://www.thesaurus.com/browse/{{head}}" target="_blank" style="text-decoration:none;" class="td-nolookup">🍩</a>
